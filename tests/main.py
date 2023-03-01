@@ -1,19 +1,11 @@
 # This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-import reliability as rel
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-    rel
+import reliability.linearNormal as ln
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+ls = ln.LimitState()
+ls.add_variable("r", 100, 10, 1, True)
+ls.add_variable("q", 80, 8, 1, False)
 
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(ls.beta())
